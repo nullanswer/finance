@@ -7,18 +7,13 @@ Messages = new Mongo.Collection('messages');
 Meteor.subscribe('messages');
 
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
 Template.messages.helpers({
     messages : messageFunc,
     time : timeFunc
 });
 
 Template.newMessage.events({
-    "submit from" : createMessage
+    "submit form" : createMessage
 });
 
 function messageFunc() {
